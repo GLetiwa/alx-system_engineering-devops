@@ -1,2 +1,2 @@
 #!/bin/bash
-words=$(tr ' ' '\n' | sort | uniq -u); echo "${words//[$'\n']/ }"
+sort | uniq -u
