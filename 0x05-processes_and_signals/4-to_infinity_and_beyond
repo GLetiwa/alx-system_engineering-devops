@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#The script displays to infinity and beyond with a 2 second delay
+
+message="To infinity and beyond"
+
+while true
+do
+	echo "$message"
+	sleep 2
+done
