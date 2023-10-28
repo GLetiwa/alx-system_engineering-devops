@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 #The script uses kill to terminate the process
 
-./4-to_infinity_and_beyond &
-
-read -r -n 1 -s
-
-pkill -f "4-to_infinity_and_beyond"
+p_kill=$(pgrep -f 4-to_infinity_and_beyond)
+kill "$p_kill"
