@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# gets the PID of my BASH Process
+# shellcheck disable=SC2009
+
+bash_pids=$(ps aux --forest | grep 'bash' | awk '{print $2}')
+
+echo "PIDs of Bash processes:"
+echo "$bash_pids"
