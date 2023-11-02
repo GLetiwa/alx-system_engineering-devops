@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Use netcat to listen on port 98 on localhost
-nc -l -p 98
