@@ -2,8 +2,4 @@
 
 # Uses ssh to connect to a server using a private key
 
-user="ubuntu"
-server="54.234.89.183"
-
-# ssh connection with private key
-ssh -i ~/.ssh/school $user@$server
+ssh ubuntu -i ~/.ssh/school
