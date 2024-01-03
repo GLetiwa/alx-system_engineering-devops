@@ -1,22 +1,11 @@
 #!/usr/bin/env bash
-# Installs, configures, and starts the server
+# Update package list and install nginx
 
-apt-get update
-apt-get install -y nginx
 
-mkdir /etc/nginx/html
+sudo apt-get update && sudo apt-get -y install nginx
 
-touch /etc/nginx/html/index.html
+sudo nginx
 
-echo "Hello World" > /etc/nginx/html/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 
-# sets nginx to listen on port 80
-printf %s "server {
-	listen	80;
-	listen	[::]:80 default server;
-	root	/etc/nginx/html;
-	index	index.html inde.htm;
-}
-" > /etc/nginx/sites-available/default
-
-service nginx start
+sudo service nginx reload
