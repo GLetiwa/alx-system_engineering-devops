@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Configure your Nginx server to have a custom 404 page
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
+
+# Configure Nginx to use the custom 404 page
+echo "error_page 404 /404.html;" | sudo tee -a /etc/nginx/sites-available/default > /dev/null
+echo "location = /404.html {" | sudo tee -a /etc/nginx/sites-available/default > /dev/null
+echo "    root /var/www/html;" | sudo tee -a /etc/nginx/sites-available/default > /dev/null
+echo "    internal;" | sudo tee -a /etc/nginx/sites-available/default > /dev/null
+echo "}" | sudo tee -a /etc/nginx/sites-available/default > /dev/null
+
+sudo service nginx reload
